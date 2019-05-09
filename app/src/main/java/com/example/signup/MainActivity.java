@@ -27,14 +27,18 @@ public class MainActivity extends AppCompatActivity {
         edt1 = findViewById(R.id.user);
         edt2 = findViewById(R.id.pswd);
 
+//        String s1 = edt1.getText().toString().trim();
+//        String s2 = edt2.getText().toString().trim();
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Main2Activity.class));
-                Toast.makeText(MainActivity.this, "Your Password is: " + edt2.getText() + " " + "Your Username is: " + edt1.getText(), Toast.LENGTH_LONG).show();
 
                 if (checkValidation()) {
-                    Toast.makeText(MainActivity.this, "Thank you", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Your Password is: " + edt2.getText() + " " + "Your Username is: " + edt1.getText(), Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                    startActivity(i);
+                    finish();
                 }
 
             }
