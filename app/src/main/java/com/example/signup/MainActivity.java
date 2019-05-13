@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         edt1 = findViewById(R.id.user);
         edt2 = findViewById(R.id.pswd);
 
-//        String s1 = edt1.getText().toString().trim();
-//        String s2 = edt2.getText().toString().trim();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         String name = edt1.getText().toString().trim();
         String pas = edt2.getText().toString().trim();
 
-        if (name.length() <= 0) {
+        if (name.length() <= 0 && name.isEmpty()) {
             edt1.requestFocus();
             edt1.setError("Enter Name");
             return false;
-        } else if (pas.length() <= 0) {
+        } else if (pas.length() <= 0 && pas.isEmpty()) {
             edt2.requestFocus();
             edt2.setError("Enter Password");
             return false;
